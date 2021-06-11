@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>org.example.untitled1</id>
+    <name>Plugin display name here</name>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="SimpleGroup" text="Pastebin" popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <action id="QuickPaste" class="QuickPaste" text="Quick Paste">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH" second-keystroke="ctrl R"/>
+            </action>
+            <action id="EditExpandablePaste" class="EditExpandablePaste" text="Edit Stored Paste">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH" second-keystroke="ctrl Q"/>
+            </action>
+            <action id="ExpandablePaste" class="ExpandablePaste" text="Store Paste">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH" second-keystroke="ctrl W"/>
+            </action>
+            <action id="FinishExpandablePaste" class="FinishExpandablePaste" text="Finish Stored Paste">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH" second-keystroke="ctrl E"/>
+            </action>
+        </group>
+    </actions>
+
+</idea-plugin>
